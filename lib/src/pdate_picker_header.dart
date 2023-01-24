@@ -92,8 +92,9 @@ class PDatePickerHeader extends StatelessWidget {
     final Color onPrimarySurfaceColor =
         isDark ? colorScheme.onSurface : colorScheme.onPrimary;
 
-    final TextStyle? helpStyle = textTheme.overline?.copyWith(
+    final TextStyle? helpStyle = titleStyle?.copyWith(
       color: onPrimarySurfaceColor,
+      fontSize: 16,
     );
 
     final Text help = Text(
@@ -131,9 +132,8 @@ class PDatePickerHeader extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  const SizedBox(height: 16),
                   Flexible(child: help),
-                  const SizedBox(height: 38),
+                  const Spacer(),
                   Row(
                     children: <Widget>[
                       Expanded(child: title),

@@ -36,6 +36,9 @@ enum PDatePickerMode {
   /// Choosing a month and day.
   day,
 
+  /// Choosing a month.
+  month,
+
   /// Choosing a year.
   year,
 }

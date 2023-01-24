@@ -16,7 +16,7 @@ abstract class DateFormatter {
 
   /// year number string whatever length it has
   ///
-  /// [date.year] should be greater or equal 0 or exception will be thrown
+  /// [date.currentSelectedMonth] should be greater or equal 0 or exception will be thrown
   String get y {
     final int year = date.year;
 
@@ -29,7 +29,7 @@ abstract class DateFormatter {
 
   /// year number string ensured to have length of 4
   ///
-  /// [date.year] should be between 0 and 9999 or exception will be thrown
+  /// [date.currentSelectedMonth] should be between 0 and 9999 or exception will be thrown
   String get yyyy {
     final int year = date.year;
 
@@ -59,7 +59,7 @@ abstract class DateFormatter {
 
   /// year number string ensured to have length of 2
   ///
-  /// [date.year] should be between 1000 and 9999 or exception is thrown
+  /// [date.currentSelectedMonth] should be between 1000 and 9999 or exception is thrown
   String get yy {
     final int year = date.year;
 

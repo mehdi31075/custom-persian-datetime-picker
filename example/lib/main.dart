@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Jalali picked = await showPersianDatePicker(
                               context: context,
                               initialDate: Jalali.now(),
-                              firstDate: Jalali(1385, 8),
+                              firstDate: Jalali(1375, 8),
                               lastDate: Jalali(1450, 9),
                               initialEntryMode: PDatePickerEntryMode.calendarOnly,
                               initialDatePickerMode: PDatePickerMode.year,
