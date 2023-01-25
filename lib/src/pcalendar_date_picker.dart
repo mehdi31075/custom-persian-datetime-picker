@@ -131,7 +131,7 @@ class _CalendarDatePickerState extends State<PCalendarDatePicker> {
   void initState() {
     super.initState();
     _mode = widget.initialCalendarMode;
-    _currentDisplayedDate = Jalali(widget.initialDate.year, widget.initialDate.month);
+    _currentDisplayedDate = Jalali(widget.initialDate.year, widget.initialDate.month, widget.initialDate.day);
     _selectedDate = widget.initialDate;
   }
 
@@ -195,7 +195,7 @@ class _CalendarDatePickerState extends State<PCalendarDatePicker> {
       _currentDisplayedDate = value;
       _selectedDate = value;
       widget.onDisplayedMonthChanged?.call(_currentDisplayedDate);
-      widget.onDateChanged.call(_currentDisplayedDate);
+      widget.onDateChanged.call(_selectedDate);
     });
   }
 
@@ -354,7 +354,7 @@ class _DatePickerModeToggleButtonState extends State<_DatePickerModeToggleButton
             color: widget.mode == mode ? enabledDatePickerModeColor : Colors.transparent,
           ),
         ),
-        padding: const MaterialStatePropertyAll(EdgeInsets.zero),
+        padding: const MaterialStatePropertyAll(EdgeInsets.symmetric(horizontal: 4)),
         backgroundColor: MaterialStatePropertyAll(
           widget.mode == mode ? enabledDatePickerModeColor.withOpacity(0.3) : Colors.transparent,
         ),
@@ -362,7 +362,7 @@ class _DatePickerModeToggleButtonState extends State<_DatePickerModeToggleButton
       child: Text(
         title,
         overflow: TextOverflow.ellipsis,
-        style: textTheme.subtitle1?.copyWith(
+        style: textTheme.subtitle2?.copyWith(
           color: controlColor,
         ),
       ),

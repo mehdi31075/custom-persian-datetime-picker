@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Jalali picked = await showPersianDatePicker(
                               context: context,
                               initialDate: Jalali.now(),
-                              firstDate: Jalali(1375, 8),
+                              firstDate: Jalali(1375, 10, 3),
                               lastDate: Jalali(1450, 9),
                               initialEntryMode: PDatePickerEntryMode.calendarOnly,
                               initialDatePickerMode: PDatePickerMode.year,
@@ -86,8 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   data: ThemeData(
                                     dialogTheme: const DialogTheme(
                                       shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(0)),
+                                        borderRadius: BorderRadius.all(Radius.circular(0)),
                                       ),
                                     ),
                                   ),
@@ -104,8 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       imageButton(
                         onTap: () async {
-                          Jalali pickedDate =
-                              await showModalBottomSheet<Jalali>(
+                          Jalali pickedDate = await showModalBottomSheet<Jalali>(
                             context: context,
                             builder: (context) {
                               Jalali tempPickedDate;
@@ -115,8 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   children: <Widget>[
                                     Container(
                                       child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: <Widget>[
                                           CupertinoButton(
                                             child: Text(
@@ -137,9 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               ),
                                             ),
                                             onPressed: () {
-                                              Navigator.of(context).pop(
-                                                  tempPickedDate ??
-                                                      Jalali.now());
+                                              Navigator.of(context).pop(tempPickedDate ?? Jalali.now());
                                             },
                                           ),
                                         ],
@@ -154,15 +149,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                         child: CupertinoTheme(
                                           data: CupertinoThemeData(
                                             textTheme: CupertinoTextThemeData(
-                                              dateTimePickerTextStyle:
-                                                  TextStyle(fontFamily: 'Dana'),
+                                              dateTimePickerTextStyle: TextStyle(fontFamily: 'Dana'),
                                             ),
                                           ),
                                           child: PCupertinoDatePicker(
-                                            mode: PCupertinoDatePickerMode
-                                                .dateAndTime,
-                                            onDateTimeChanged:
-                                                (Jalali dateTime) {
+                                            mode: PCupertinoDatePickerMode.dateAndTime,
+                                            onDateTimeChanged: (Jalali dateTime) {
                                               tempPickedDate = dateTime;
                                             },
                                           ),
@@ -193,24 +185,21 @@ class _MyHomePageState extends State<MyHomePage> {
                               return Directionality(
                                 textDirection: TextDirection.rtl,
                                 child: MediaQuery(
-                                  data: MediaQuery.of(context)
-                                      .copyWith(alwaysUse24HourFormat: true),
+                                  data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: true),
                                   child: child,
                                 ),
                               );
                             },
                           );
                           setState(() {
-                            if (picked != null)
-                              label = picked.persianFormat(context);
+                            if (picked != null) label = picked.persianFormat(context);
                           });
                         },
                         image: '09',
                       ),
                       imageButton(
                         onTap: () async {
-                          Jalali pickedDate =
-                              await showModalBottomSheet<Jalali>(
+                          Jalali pickedDate = await showModalBottomSheet<Jalali>(
                             context: context,
                             builder: (context) {
                               Jalali tempPickedDate;
@@ -220,8 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   children: <Widget>[
                                     Container(
                                       child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: <Widget>[
                                           CupertinoButton(
                                             child: Text(
@@ -244,8 +232,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             onPressed: () {
                                               print(tempPickedDate);
 
-                                              Navigator.of(context)
-                                                  .pop(tempPickedDate);
+                                              Navigator.of(context).pop(tempPickedDate);
                                             },
                                           ),
                                         ],
@@ -260,14 +247,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                         child: CupertinoTheme(
                                           data: CupertinoThemeData(
                                             textTheme: CupertinoTextThemeData(
-                                              dateTimePickerTextStyle:
-                                                  TextStyle(fontFamily: 'Dana'),
+                                              dateTimePickerTextStyle: TextStyle(fontFamily: 'Dana'),
                                             ),
                                           ),
                                           child: PCupertinoDatePicker(
                                             mode: PCupertinoDatePickerMode.time,
-                                            onDateTimeChanged:
-                                                (Jalali dateTime) {
+                                            onDateTimeChanged: (Jalali dateTime) {
                                               tempPickedDate = dateTime;
                                             },
                                           ),
@@ -325,8 +310,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             },
                           );
                           setState(() {
-                            if (picked != null)
-                              label = picked.persianFormat(context);
+                            if (picked != null) label = picked.persianFormat(context);
                           });
                         },
                         image: '04',
@@ -372,10 +356,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Center(
             child: Text(
               label,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline5
-                  .copyWith(color: Colors.black),
+              style: Theme.of(context).textTheme.headline5.copyWith(color: Colors.black),
               textAlign: TextAlign.center,
             ),
           ),
@@ -461,4 +442,3 @@ class _ScaleGestureState extends State<ScaleGesture> {
     );
   }
 }
-
